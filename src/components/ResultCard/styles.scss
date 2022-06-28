@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  min-width: 250px;
+  border: 1px solid #bbb;
+  margin-bottom: 1rem;
+}
+
+.cardImage {
+  max-width: 150px;
+  min-width: 100%;
+  min-height: 150px;
+  flex: 2;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+.cardInfos {
+  flex: 1;
+  padding: .8rem;
+  background-color: white;
+
+  & h3 {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-bottom: .4rem;
+  }
+
+  & h5 {
+    font-size: 1rem;
+    color: #999;
+    padding-bottom: .6rem;
+  }
+
+  & p {
+    text-align: justify;
+    font-size: .9rem;
+  }
+}
