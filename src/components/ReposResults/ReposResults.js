@@ -8,9 +8,10 @@ function ReposResults({ results }) {
       {
       results.map((repos) => (
         <ResultCard
+          key={repos.id}
           avatar={repos.owner.avatar_url}
           name={repos.name}
-          login={repos.login}
+          login={repos.owner.login}
           description={repos.description}
         />
       ))
@@ -22,9 +23,12 @@ function ReposResults({ results }) {
 ReposResults.propTypes = {
   results: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
-      avatar_url: PropTypes.string.isRequired,
-      login: PropTypes.string.isRequired,
+      owner: PropTypes.shape({
+        avatar_url: PropTypes.string.isRequired,
+        login: PropTypes.string.isRequired,
+      }).isRequired,
       description: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
